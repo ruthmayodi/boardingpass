@@ -3,11 +3,15 @@ import java.util.*;
 
 public class Passenger {
 
+    // Attributes
+
     private String name;
     private String email;
     private int phone;
     private String gender;
     private int age;
+
+    // Constructor
 
     public Passenger(String name, String email, int phone, String gender, int age){
         this.name = name;
@@ -16,6 +20,8 @@ public class Passenger {
         this.gender = gender;
         this.age = age;
     }
+
+    // Getters/Setters
 
     public String getName() {
         return name;
@@ -56,6 +62,8 @@ public class Passenger {
     public void setAge(int age) {
         this.age = age;
     }
+
+    // Override method, don't know if we need it.
 
     @Override
     public String toString() {

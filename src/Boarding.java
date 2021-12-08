@@ -3,12 +3,16 @@ import java.util.*;
 
 public class Boarding {
 
+    // Attributes
+
     private int passNumber;
     private Date date;
     private String origin;
     private String destination;
     private Date eta;
     private Date departureTime;
+
+    // Constructor
 
     public Boarding(int passNumber, Date date, String origin, String destination, Date eta, Date departureTime){
         this.passNumber = passNumber;
@@ -18,6 +22,8 @@ public class Boarding {
         this.eta = eta;
         this.departureTime = departureTime;
     }
+
+    // Getters/Setters
 
     public int getPassNumber() {
         return passNumber;
@@ -66,6 +72,8 @@ public class Boarding {
     public void setDepartureTime(Date departureTime) {
         this.departureTime = departureTime;
     }
+
+    // Override method, don't know if we need it.
 
     @Override
     public String toString() {
