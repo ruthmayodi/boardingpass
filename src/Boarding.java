@@ -1,4 +1,5 @@
 
+import java.time.LocalTime;
 import java.util.*;
 
 public class Boarding {
@@ -10,17 +11,21 @@ public class Boarding {
     private String origin;
     private String destination;
     private Date eta;
-    private Date departureTime;
+    private LocalTime departureTime;
 
     // Constructor
 
-    public Boarding(int passNumber, Date date, String origin, String destination, Date eta, Date departureTime){
+    public Boarding(int passNumber, Date date, String origin, String destination, Date eta, LocalTime departureTime){
         this.passNumber = passNumber;
         this.date = date;
         this.origin = origin;
         this.destination = destination;
         this.eta = eta;
         this.departureTime = departureTime;
+    }
+
+    public Boarding() {
+
     }
 
     // Getters/Setters
@@ -65,11 +70,11 @@ public class Boarding {
         this.eta = eta;
     }
 
-    public Date getDepartureTime() {
+    public LocalTime getDepartureTime() {
         return departureTime;
     }
 
-    public void setDepartureTime(Date departureTime) {
+    public void setDepartureTime(LocalTime departureTime) {
         this.departureTime = departureTime;
     }
 
