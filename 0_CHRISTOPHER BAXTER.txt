@@ -1,0 +1,14 @@
+=============================================================
+Boarding Pass Number  : 0
+                Date  : 10/12/2021
+              Origin  : Atlanta
+         Destination  : New York
+                 ETA  : 10/12/2021 12:25
+      Departure Time  : 10/12/2021 12:30
+      Passenger Name  : Christopher Baxter
+               Email  : email@email.com
+        Phone Number  : 1800-Go-Away
+              Gender  : Main
+                 Age  : 123
+  Total Ticket Price  : $400.0
+=============================================================

@@ -21,6 +21,10 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
 
+        Main thing = new Main();
+
+        thing.generateTicket();
+        thing.displayTicket();
     }
 
    /* public void Construct (){
@@ -77,9 +81,7 @@ public class Main {
 
         // Ask user to enter departure time
         System.out.print("Enter Departure Time (HH:MM): ");
-        String time = sc.next();
-        LocalTime lt = LocalTime.parse(time);
-        pass.setDepartureTime(lt);
+        pass.setDepartureTime(sc.nextLine());
 
         // Generate random ticket number
         pass.setPassNumber((int) Math.random());
@@ -117,15 +119,21 @@ public class Main {
             price -= 0.5 * price;
         } else if (human.getAge() >= 60) {
             price -= 0.6 * price;
-        } else if (human.getGender().equalsIgnoreCase("female")) {
+        }
+
+        if (human.getGender().equalsIgnoreCase("female")) {
             price -= 0.25 * price;
         }
 
         return price;
     }
     
-    public void generateTicket(Passenger human, Boarding pass) throws IOException {
+    public void generateTicket() throws IOException {
+        setPassengerInfo();
+        setBoardingInfo();
+
         ticketFilename = String.format("%s_%s.txt", pass.getPassNumber(), human.getName().toUpperCase());
+
         PrintWriter writer = new PrintWriter(new FileWriter(ticketFilename));
 
         writer.println("=============================================================");
@@ -133,8 +141,8 @@ public class Main {
         writer.printf("%20s%3s %s\n", "Date", ":", new SimpleDateFormat("dd/MM/yyyy").format(pass.getDate()));
         writer.printf("%20s%3s %s\n", "Origin", ":", pass.getOrigin());
         writer.printf("%20s%3s %s\n", "Destination", ":", pass.getDestination());
-        writer.printf("%20s%3s %s\n", "ETA", ":", pass.getEta());
-        writer.printf("%20s%3s %s\n", "Departure Time", ":", pass.getDepartureTime());
+        writer.printf("%20s%3s %s\n", "ETA", ":", getETA());
+        writer.printf("%20s%3s %s\n", "Departure Time", ":", getDepartureTimeString());
         writer.printf("%20s%3s %s\n", "Passenger Name", ":", human.getName());
         writer.printf("%20s%3s %s\n", "Email", ":", human.getEmail());
         writer.printf("%20s%3s %s\n", "Phone Number", ":", human.getPhone());

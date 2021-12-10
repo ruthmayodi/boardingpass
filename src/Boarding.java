@@ -10,17 +10,15 @@ public class Boarding {
     private Date date;
     private String origin;
     private String destination;
-    private Date eta;
-    private LocalTime departureTime;
+    private String departureTime;
 
     // Constructor
 
-    public Boarding(int passNumber, Date date, String origin, String destination, Date eta, LocalTime departureTime){
+    public Boarding(int passNumber, Date date, String origin, String destination, String departureTime){
         this.passNumber = passNumber;
         this.date = date;
         this.origin = origin;
         this.destination = destination;
-        this.eta = eta;
         this.departureTime = departureTime;
     }
 
@@ -62,19 +60,11 @@ public class Boarding {
         this.destination = destination;
     }
 
-    public Date getEta() {
-        return eta;
-    }
-
-    public void setEta(Date eta) {
-        this.eta = eta;
-    }
-
-    public LocalTime getDepartureTime() {
+    public String getDepartureTime() {
         return departureTime;
     }
 
-    public void setDepartureTime(LocalTime departureTime) {
+    public void setDepartureTime(String departureTime) {
         this.departureTime = departureTime;
     }
 
@@ -87,7 +77,6 @@ public class Boarding {
         sb.append("Date: ").append(this.date).append("\n");
         sb.append("Origin: ").append(this.origin).append("\n");
         sb.append("Destination: ").append(this.destination).append("\n");
-        sb.append("ETA: ").append(this.eta).append("\n");
         sb.append("Departure Time: ").append(this.departureTime).append("\n");
         return sb.toString();
     }
