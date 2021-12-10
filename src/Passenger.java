@@ -1,24 +1,25 @@
-
-import java.util.*;
-
 public class Passenger {
 
     // Attributes
 
     private String name;
     private String email;
-    private int phone;
+    private String phone;
     private String gender;
     private int age;
 
     // Constructor
 
-    public Passenger(String name, String email, int phone, String gender, int age){
+    public Passenger(String name, String email, String phone, String gender, int age){
         this.name = name;
         this.email = email;
         this.phone = phone;
         this.gender = gender;
         this.age = age;
+    }
+
+    public Passenger() {
+
     }
 
     // Getters/Setters
@@ -39,11 +40,11 @@ public class Passenger {
         this.email = email;
     }
 
-    public int getPhone() {
+    public String getPhone() {
         return phone;
     }
 
-    public void setPhone(int phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 
