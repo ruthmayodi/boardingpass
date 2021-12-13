@@ -84,7 +84,7 @@ public class Main {
         pass.setDepartureTime(sc.nextLine());
 
         // Generate random ticket number
-        pass.setPassNumber((int) Math.random());
+        pass.setPassNumber((int) (Math.random() * (250 - 100) + 100));
     }
     
     public String getETA() {
